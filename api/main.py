@@ -2,6 +2,7 @@ from fastapi import FastAPI
 
 from api.routers.appRouter import app_routers
 
+
 api = FastAPI()
 
 
