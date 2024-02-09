@@ -1,6 +1,6 @@
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-from api.models.analyzer import AnalyzeSentiment
+from api.models.analyzer_model import AnalyzeSentiment
 
 
 class Analyzer:
