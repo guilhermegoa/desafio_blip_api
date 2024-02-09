@@ -1,4 +1,4 @@
-# Nome do Projeto
+# Desafio Blip
 
 O Desafio Técnico consiste na criação de um microserviço RESTful utilizando o framework FastAPI em Python. Este microserviço deve receber texto como entrada e retornar informações processadas utilizando um modelo de Processamento de Linguagem Natural (NLP). Para a realização deste desafio, você pode utilizar o modelo de tokenização de palavras da biblioteca NLTK ou outro modelo de NLP de sua escolha.
 
