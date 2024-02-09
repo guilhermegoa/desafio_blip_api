@@ -1,5 +1,5 @@
 import unittest
-from api.services.analyzer import Analyzer
+from api.services.analyzer_service import Analyzer
 
 class TestAnalyzer(unittest.TestCase):
 
