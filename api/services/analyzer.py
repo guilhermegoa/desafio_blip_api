@@ -7,7 +7,7 @@ class Analyzer:
 
     def analyzeSentiment(self, sentence: str):
         if not sentence or sentence == "" or type(sentence) is not str:
-            raise {"error": "No sentence provided"}
+            raise Exception({"error": "No sentence provided"})
         
         sid = SentimentIntensityAnalyzer()
         ss = sid.polarity_scores(sentence)
