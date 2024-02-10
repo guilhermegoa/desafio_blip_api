@@ -11,10 +11,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN python -c "import nltk; nltk.download('vader_lexicon')"
 
 # Copie o conteúdo do diretório local para o diretório de trabalho do contêiner
-COPY ./api api
-
-# Expõe a porta 8000 para acesso externo
-EXPOSE 8000
+COPY ./app app
 
 # Comando para iniciar a aplicação FastAPI usando uvicorn
-CMD ["uvicorn", "api.main:api", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

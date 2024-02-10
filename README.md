@@ -11,7 +11,7 @@ Aqui está a estrutura de arquivos básica do projeto:
 ```txt
     desafio_blip_api/
     │
-    ├── api/
+    ├── app/
     │   ├── models/
     │   │   ├── __init__.py
     │   │   └── analyzer_model.py
@@ -29,7 +29,7 @@ Aqui está a estrutura de arquivos básica do projeto:
     │   ├── __init__.py
     │   └── main.py
     │
-    ├── api.py
+    ├── my_app.py
     ├── requirements.txt
     ├── README.md
     └── .gitignore
@@ -37,7 +37,8 @@ Aqui está a estrutura de arquivos básica do projeto:
 
 ## Descrição dos Arquivos
 
-- **`api/`**: Este diretório contém os componentes da API.
+- **`app/`**: Este diretório contém os componentes da API.
+
   - **`models/`**: Contém os modelos de dados da API.
     - **`__init__.py`**: Arquivo de inicialização do pacote models.
     - **`analyzer.py`**: Arquivo que define os modelos de dados para análise.
@@ -50,12 +51,12 @@ Aqui está a estrutura de arquivos básica do projeto:
   - **`teste/`**: Contém os testes da API.
     - **`__init__.py`**: Arquivo de inicialização do pacote teste.
     - **`services/`**: Contém os testes de serviço.
-      - **`analyser_test.py`**: Arquivo que define os testes para o serviço de análise.
+      - **`analyzer_test.py`**: Arquivo que define os testes para o serviço de análise.
       - **`__init__.py`**: Arquivo de inicialização do pacote de testes de serviço.
   - **`__init__.py`**: Arquivo de inicialização do pacote api.
   - **`main.py`**: Arquivo principal que contém a lógica principal da API.
 
-- **`api.py`**: Script principal para executar a API.
+- **`my_app.py`**: Script principal para executar a API.
 - **`requirements.txt`**: Arquivo que lista todas as dependências do projeto e suas versões para instalação com pip.
 - **`README.md`**: Arquivo de readme que contém informações sobre o projeto.
 - **`.gitignore`**: Arquivo que especifica arquivos e diretórios que devem ser ignorados pelo controle de versão Git.
@@ -72,13 +73,19 @@ Certifique-se de estar no diretório raiz do projeto ao executar este comando. I
 
 ## Executar
 
-Para executar em modo de recarga automática:
+Primeiro rode o comando para fazer download do vader_lexicon.
 
 ```cmd
-    uvicorn.exe api.main:api --reload
+    python -c "import nltk; nltk.download('vader_lexicon')"
 ```
 
 Para executar em modo de recarga automática:
+
+```cmd
+    uvicorn.exe app.main:app --reload
+```
+
+Para executar sem modo de recarga automática:
 
 ```cmd
     python api.py
