@@ -32,6 +32,8 @@ Aqui está a estrutura de arquivos básica do projeto:
     ├── my_app.py
     ├── requirements.txt
     ├── README.md
+    ├── Dockerfile
+    ├── docker-compose.yml
     └── .gitignore
 ```
 
@@ -59,6 +61,8 @@ Aqui está a estrutura de arquivos básica do projeto:
 - **`my_app.py`**: Script principal para executar a API.
 - **`requirements.txt`**: Arquivo que lista todas as dependências do projeto e suas versões para instalação com pip.
 - **`README.md`**: Arquivo de readme que contém informações sobre o projeto.
+- **`Dockerfile`**: Arquivo de configuração do Docker que define como as imagens Docker são construídas.
+- **`docker-compose.yml`**: Arquivo de configuração do Docker Compose que define a execução de aplicativos Docker multi-container.
 - **`.gitignore`**: Arquivo que especifica arquivos e diretórios que devem ser ignorados pelo controle de versão Git.
 
 ## Instalação
