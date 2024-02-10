@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from api.services.analyzer_service import Analyzer
-from api.models.analyzer_model import AnalyzeSentiment
+from app.services.analyzer_service import Analyzer
+from app.models.analyzer_model import AnalyzeSentiment
 
 
 router = APIRouter()
