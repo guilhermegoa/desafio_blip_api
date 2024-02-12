@@ -96,7 +96,7 @@ Certifique-se de estar no diretório raiz do projeto ao executar este comando. I
 
 ## Executar
 
-Primeiro rode o comando para fazer download do vader_lexicon.
+Primeiro rode o comando para fazer download.
 
 ```cmd
     python -c "import nltk; nltk.download('vader_lexicon')"
