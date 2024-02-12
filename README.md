@@ -50,6 +50,7 @@ Aqui está a estrutura de arquivos básica do projeto:
 ## Descrição dos Arquivos
 
 - **`app/`**: Este diretório contém os componentes da API.
+
 - **`configurations/`**: Contém configurações do aplicativo.
   - **`__init__.py`**: Arquivo de inicialização do pacote de configurações.
   - **`exceptions/`**: Diretório que contém as exceções personalizadas do aplicativo.
