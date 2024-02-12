@@ -1,4 +1,5 @@
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from app.configurations.exceptions.sentiment_analyze_exception import SentimentAnalyzerException
 
 from app.models.analyzer_model import AnalyzeSentiment
 
@@ -22,10 +23,10 @@ class Analyzer:
             Dict[str, float]: Um dicionário contendo as pontuações de sentimento.
                 As chaves do dicionário são 'neg', 'neu', 'pos' e 'compound'.
         """
-        if not sentence or sentence == "" or type(sentence) is not str:
-            raise Exception({"error": "No sentence provided"})
-        
-        sid = SentimentIntensityAnalyzer()
-        ss = sid.polarity_scores(sentence)
+        try:
+            sid = SentimentIntensityAnalyzer()
+            ss = sid.polarity_scores(sentence)
 
-        return ss
+            return ss
+        except Exception as e:
+            raise SentimentAnalyzerException("Erro ao analisar sentimento.")
