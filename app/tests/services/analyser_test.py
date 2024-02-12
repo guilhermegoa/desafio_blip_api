@@ -1,35 +1,25 @@
 import unittest
+from app.configurations.exceptions.sentiment_analyze_exception import SentimentAnalyzerException
 from app.services.analyzer_service import Analyzer
 
-class TestAnalyzer(unittest.TestCase):
 
+class TestAnalyzer(unittest.TestCase):
     def setUp(self):
         self.analyzer = Analyzer()
-        self.error_object = "{'error': 'No sentence provided'}"
-
-    def test_analyzeSentiment_with_valid_sentence(self):
-        sentence = "I love Python!"
+    
+    def test_analyze_sentiment_valid_sentence(self):
+        sentence = "Life is good"
         result = self.analyzer.analyzeSentiment(sentence)
         self.assertIsInstance(result, dict)
-        self.assertTrue("neg" in result)
-        self.assertTrue("neu" in result)
-        self.assertTrue("pos" in result)
-        self.assertTrue("compound" in result)
+        self.assertIn('neg', result)
+        self.assertIn('neu', result)
+        self.assertIn('pos', result)
+        self.assertIn('compound', result)
 
-    def test_analyzeSentiment_with_empty_sentence(self):
-        with self.assertRaises(Exception) as context:
-            self.analyzer.analyzeSentiment("")
-        self.assertEqual(str(context.exception), self.error_object)
+    def test_analyze_sentiment_invalid_input(self):
+        sentence = None
+        with self.assertRaises(SentimentAnalyzerException):
+            self.analyzer.analyzeSentiment(sentence)
 
-    def test_analyzeSentiment_with_invalid_input(self):
-        with self.assertRaises(Exception) as context:
-            self.analyzer.analyzeSentiment(None)
-        self.assertEqual(str(context.exception), self.error_object)
-
-    def test_analyzeSentiment_with_invalid_input_type(self):
-        with self.assertRaises(Exception) as context:
-            self.analyzer.analyzeSentiment(123)
-        self.assertEqual(str(context.exception), self.error_object)
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

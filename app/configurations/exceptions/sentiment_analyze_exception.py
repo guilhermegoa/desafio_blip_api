@@ -5,6 +5,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+
 class SentimentAnalyzerException(Exception):
     def __init__(self, message):
         self.message = message
