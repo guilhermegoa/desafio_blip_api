@@ -100,6 +100,8 @@ Primeiro rode o comando para fazer download do vader_lexicon.
 
 ```cmd
     python -c "import nltk; nltk.download('vader_lexicon')"
+    python -c "import nltk; nltk.download('words')"
+    python -c "import nltk; nltk.download('averaged_perceptron_tagger')"
 ```
 
 Para executar em modo de recarga automática:
