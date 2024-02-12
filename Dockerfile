@@ -8,9 +8,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Instale o nltk e baixe o recurso vader_lexicon
+RUN python -c "import nltk; nltk.download('words')"
+RUN python -c "import nltk; nltk.download('punkt')"
 RUN python -c "import nltk; nltk.download('vader_lexicon')"
-RUN python -c "import nltk; nltk.download('words')" 
-RUN python -c "import nltk; nltk.download('averaged_perceptron_tagger')" 
+RUN python -c "import nltk; nltk.download('averaged_perceptron_tagger')"
 
 # Copie o conteúdo do diretório local para o diretório de trabalho do contêiner
 COPY ./app app

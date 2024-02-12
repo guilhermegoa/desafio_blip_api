@@ -99,8 +99,9 @@ Certifique-se de estar no diretório raiz do projeto ao executar este comando. I
 Primeiro rode o comando para fazer download.
 
 ```cmd
-    python -c "import nltk; nltk.download('vader_lexicon')"
     python -c "import nltk; nltk.download('words')"
+    python -c "import nltk; nltk.download('punkt')"
+    python -c "import nltk; nltk.download('vader_lexicon')"
     python -c "import nltk; nltk.download('averaged_perceptron_tagger')"
 ```
 
