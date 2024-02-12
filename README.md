@@ -9,54 +9,73 @@ O Desafio Técnico consiste na criação de um microserviço RESTful utilizando 
 Aqui está a estrutura de arquivos básica do projeto:
 
 ```txt
-    desafio_blip_api/
-    │
-    ├── app/
-    │   ├── models/
-    │   │   ├── __init__.py
-    │   │   └── analyzer_model.py
-    │   ├── routers/
-    │   │   ├── __init__.py
-    │   │   └── analyzer_router.py
-    │   ├── services/
-    │   │   ├── __init__.py
-    │   │   └── analyzer_service.py
-    │   ├── teste/
-    │   │   ├── __init__.py
-    │   │   └── services/
-    │   │       ├── __init__.py
-    │   │       └── analyzer_test.py
-    │   ├── __init__.py
-    │   └── main.py
-    │
-    ├── my_app.py
-    ├── requirements.txt
-    ├── README.md
-    ├── Dockerfile
-    ├── docker-compose.yml
-    └── .gitignore
+  desafio_blip_api/
+  │
+  ├── app/
+  │   ├── configurations/
+  │   │   ├── __init__.py
+  │   │   ├── exceptions/
+  │   │   │   ├── __init__.py
+  │   │   │   ├── exceptions_default_handler.py
+  │   │   │   └── sentiment_analyze_exception.py
+  │   │   └── validations/
+  │   │       ├── __init__.py
+  │   │       ├── str_validation.py
+  │   │       └── word_validation.py
+  │   ├── models/
+  │   │   ├── __init__.py
+  │   │   └── analyzer_model.py
+  │   ├── routers/
+  │   │   ├── __init__.py
+  │   │   └── analyzer_router.py
+  │   ├── services/
+  │   │   ├── __init__.py
+  │   │   └── analyzer_service.py
+  │   ├── teste/
+  │   │   ├── __init__.py
+  │   │   └── services/
+  │   │       ├── __init__.py
+  │   │       └── analyzer_test.py
+  │   ├── __init__.py
+  │   └── main.py
+  │
+  ├── my_app.py
+  ├── requirements.txt
+  ├── README.md
+  ├── Dockerfile
+  ├── docker-compose.yml
+  └── .gitignore
 ```
 
 ## Descrição dos Arquivos
 
 - **`app/`**: Este diretório contém os componentes da API.
-
-  - **`models/`**: Contém os modelos de dados da API.
-    - **`__init__.py`**: Arquivo de inicialização do pacote models.
-    - **`analyzer.py`**: Arquivo que define os modelos de dados para análise.
-  - **`routers/`**: Contém os roteadores da API.
-    - **`__init__.py`**: Arquivo de inicialização do pacote routers.
-    - **`analyzer.py`**: Arquivo que define os roteadores para análise.
-  - **`services/`**: Contém os serviços da API.
-    - **`__init__.py`**: Arquivo de inicialização do pacote services.
-    - **`analyzer.py`**: Arquivo que define os serviços para análise.
-  - **`teste/`**: Contém os testes da API.
-    - **`__init__.py`**: Arquivo de inicialização do pacote teste.
-    - **`services/`**: Contém os testes de serviço.
-      - **`analyzer_test.py`**: Arquivo que define os testes para o serviço de análise.
-      - **`__init__.py`**: Arquivo de inicialização do pacote de testes de serviço.
-  - **`__init__.py`**: Arquivo de inicialização do pacote api.
-  - **`main.py`**: Arquivo principal que contém a lógica principal da API.
+- **`configurations/`**: Contém configurações do aplicativo.
+  - **`__init__.py`**: Arquivo de inicialização do pacote de configurações.
+  - **`exceptions/`**: Diretório que contém as exceções personalizadas do aplicativo.
+    - **`__init__.py`**: Arquivo de inicialização do pacote de exceções.
+    - **`exceptions_default_handler.py`**: Arquivo que define o manipulador de exceções padrão.
+    - **`sentiment_analyze_exception.py`**: Arquivo que define a exceção `SentimentAnalyzeException`.
+  - **`validations/`**: Diretório que contém as validações personalizadas do aplicativo.
+    - **`__init__.py`**: Arquivo de inicialização do pacote de validações.
+    - **`str_validation.py`**: Arquivo que define validações para strings.
+    - **`word_validation.py`**: Arquivo que define validações para palavras.
+- **`models/`**: Contém os modelos de dados da API.
+  - **`__init__.py`**: Arquivo de inicialização do pacote models.
+  - **`analyzer.py`**: Arquivo que define os modelos de dados para análise.
+- **`routers/`**: Contém os roteadores da API.
+  - **`__init__.py`**: Arquivo de inicialização do pacote routers.
+  - **`analyzer.py`**: Arquivo que define os roteadores para análise.
+- **`services/`**: Contém os serviços da API.
+  - **`__init__.py`**: Arquivo de inicialização do pacote services.
+  - **`analyzer.py`**: Arquivo que define os serviços para análise.
+- **`teste/`**: Contém os testes da API.
+  - **`__init__.py`**: Arquivo de inicialização do pacote teste.
+  - **`services/`**: Contém os testes de serviço.
+    - **`analyzer_test.py`**: Arquivo que define os testes para o serviço de análise.
+    - **`__init__.py`**: Arquivo de inicialização do pacote de testes de serviço.
+- **`__init__.py`**: Arquivo de inicialização do pacote api.
+- **`main.py`**: Arquivo principal que contém a lógica principal da API.
 
 - **`my_app.py`**: Script principal para executar a API.
 - **`requirements.txt`**: Arquivo que lista todas as dependências do projeto e suas versões para instalação com pip.
